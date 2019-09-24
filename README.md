@@ -19,5 +19,5 @@ docker run -d --privileged=true --name vpn --restart always -e "VPNC_GATEWAY=1.1
 
 ### With a custom script 
 ```
-docker run -d --privileged=true --name vpn -v /data/custom-script.source:/custom-script.source --restart always -e "VPNC_GATEWAY=1.1.1.1" -e "VPNC_PASSWORD=sdfadsdf" -e "VPNC_ID=vpn-id" -e "VPNC_SECRET=asdfasdf" -e "VPNC_USERNAME=myuser" adito/vpnc
+docker run -d --privileged=true --name vpn -v /data/custom-script.source:/custom-script.source --restart always -e "CUSTOMSCRIPT=true" -e "VPNC_GATEWAY=1.1.1.1" -e "VPNC_PASSWORD=sdfadsdf" -e "VPNC_ID=vpn-id" -e "VPNC_SECRET=asdfasdf" -e "VPNC_USERNAME=myuser" adito/vpnc
 ```
