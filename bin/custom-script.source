@@ -1,0 +1,11 @@
+set -m 
+/usr/sbin/vpnc default --no-detach --non-inter --local-port 0 --debug 2 & 
+sleep 7
+route del default gw 0.0.0.0
+
+ip route add 10.10.10.50/32 via 0.0.0.0 dev tun0
+ip route add 10.10.10.90/32 via 0.0.0.0 dev tun0
+
+route -n 
+
+fg %1
